@@ -1,0 +1,18 @@
+Select * from road_accident 
+
+--Current year casulties
+Select Sum(number_of_casualties) As CY_Casualties
+From road_accident
+Where YEAR(accident_date) = '2022'
+
+---Current year casulties as dry road surface conditions
+Select Sum(number_of_casualties) As CY_Casualties
+From road_accident
+Where YEAR(accident_date) = '2022' AND road_surface_conditions = 'Dry'
+
+
+
+--Curent year Accidnets
+Select Count(dstinct accident_index) AS CY_Accidents
+From road_accident
+Where YEAR(accident_date) = '2022'
